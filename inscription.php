@@ -61,12 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 
 <head>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/log/register.php' ?>
+    <?php require_once './public/include2/log/register.php' ?>
     <title>Japan Factory inscription</title>
 </head>
 
 <body>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/header.php' ?>
+    <?php require_once './public/include2/header.php' ?>
     <section>
         <article>
             <div class="container">
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </article>
     </section>
 
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/footer.php' ?>
+    <?php require_once './public/include2/footer.php' ?>
 
 </body>
 

@@ -1,23 +1,75 @@
-<?php
-
-require_once './isloggedin2.php'
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php
-    require_once './public/include2/head.php';
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Japan Factory/ acceuil</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    <link rel="stylesheet" href="./css/accueil.css">
+    <title>Japan Factory</title>
 </head>
 
 <body>
-    <?php require_once './public/include2/header.php'; ?>
-    <section>
+    <header>
+        <nav>
+            <p class="num">✆ 03 21 00 00 00</p>
+            <div class="inscription">
+                <span>
+                    <a href="/php/accueil.php"><img src="/image/miku.jpg" alt="logo" class="photo"></a>
+                </span>
+                <div class="lien">
+                    <a href="/php/login.php" class="lien2"><strong>Connexion</strong></a>
+                    <a href="/php/inscription.php" class="lien2"><strong>Inscription</strong></a><br><br>
+
+                    <button type="submit"><a href=""><img class="searchs" src="/image/logo-search.png" alt="logo recherche"></a></button>
+                    <input class="recherche" type="search" name="" id="" placeholder="recherche...">
+                </div>
+            </div>
+        </nav>
+        <div id="wrap">
+            <ul class="navbar">
+                <li>
+                    <a href="/php/accueil.php" class="active">Accueil</a>
+                </li>
+                <li>
+                    <a href="">Vos animés</a>
+                    <ul>
+                        <li><a href="/php/wallpaper-pc.php">Wallpapper PC</a></li>
+                        <li><a href="/php/wallpaper-phone.php">Wallpapper Tél</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Vos series animés</a>
+                    <ul>
+                        <li>
+                            <a href="/php/streaming.php">Le Streaming</a>
+                            <ul>
+                                <li><a href="">Les NEWS</a></li>
+                                <li><a href="">Agenda de la semaine</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                </li>
+                <li>
+                    <a href="#">Nous contacter</a>
+                    <ul>
+                        <li><a href="/php/formulaireContact.php">Formulaire de contacte</a></li>
+                        <li><a href="">Notre blog/Tchat</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <br>
+
+        </div>
+        </div>
+    </header>    <section>
         <h1>Bienvenue sur Japan Factory </h1>
         <div id="carouselExemple" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -116,7 +168,7 @@ require_once './isloggedin2.php'
             <h1>Le façinant mont-fuji et le festival des cerisiers en fleur</h1>
             <h2>Pourquoi le mont-fuji fascine-t'il autant ?</h2>
             <div class="container">
-                <img src="/image/japan-mount-fuji-large-1-.jpg" alt="Le Mont-fuji">
+                <img src="image/japan-mount-fuji-large-1-.jpg" alt="Le Mont-fuji">
                 <p><strong>Le Mont-fuji,</strong> le volcan sacrée au Japon est l'un des site touristiques qui attirais des millions de visiteurs chaque années, cepandent cette fréquentation fragilisant l'écosysteme il fut placer le 22 juin 2013 au patrimoines mondiale son le nom: <strong>FUJISAN, lieu sacré et source d'inspiration artistique</strong>. <br>
                     Avec 3 776 mètres d'altitude, il est le point culminant du Japon.<br>
                     Situé dans une région où se rejoignent les plaques tectoniques pacifique, eurasienne et philippine,
@@ -126,14 +178,14 @@ require_once './isloggedin2.php'
             </div>
             <h2>Le festival des cerisiers qu'est ce que c'est ?</h2>
             <div class="container2">
-                <img src="/image/voir-floraison-cerisiers-okinawa-japon-nakijin-sakura-hanami-5-1024x795.jpg
+                <img src="image/voir-floraison-cerisiers-okinawa-japon-nakijin-sakura-hanami-5-1024x795.jpg
                 " alt="">
                 <p>le festival des cerisiers en fleurs plus connue sous le nom d'<strong>Hanami</strong> est une fete traditionnel ou des millier de personne viennent voir les sakura fleurir,
                     les sakura en emerveille plus d'un. Preuve en ais qu'aux yeux de tous, la floraison des sakura constitue la meilleure saison pour planifier un voyage au Japon.
                     Le pays entier vit au rythme de ces bourgeons préts à éclore, Cet événement rythme la vie japonaise. On l’appelle le hanami, quand fin mars-début avril, les Japonais convergent pour pique-niquer en admirant les cerisiers (sakuras) en fleurs.</p>
                 <div>
-                    <img src="/image/geisha.1573699.w740.jpg" alt="">
-                    <p><strong>D’Okinawa à Hokkaido</strong>, on surveille fébrilement la météo qui annonce la floraison des arbres et le lancement de la saison. Aux premiers signes du printemps, on installe des nappes dans les parcs pour festoyer sous les bourgeons qui éclosent en de fines fleurs roses. Si un pétale tombe dans un verre, <strong>trinquez de plus belle</strong>, ce n’est que le signe de la chance à venir !
+                    <img src="image/geisha.1573699.w740.jpg" alt="">
+                    <p><strong>D’Okinawa à Hokkaido</strong>, on surveille fébrilement la météo qui annonce la floraison des arbres et le lancement de la saison. Aux premiers signes du printemps, on installe des nappes dans les parcs pour festoyer sous les bourgeons qui éclosent en de fines fleurs roses. Si un pétale tombe dans un verre, <strong><em>trinquez de plus belle</em></strong>, ce n’est que le signe de la chance à venir !
                         <br> Cette coutume a été instaurée <strong>au 8e siècle</strong>, alors que le hanami correspondait à l’époque de la plantation du riz. Les paysans déposaient des offrandes aux pieds des arbres et buvaient du saké, priant pour que les riches récoltes soient au rendez-vous.
 
                         Un siècle plus tard, <strong>la cour impériale de Kyoto</strong> reprenait cette tradition, en ajoutant aux sakés les plus fins des mets raffinés, qu’elle dégustait en déclamant des poèmes. Les samouraïs, et enfin le peuple, adoptèrent ce rituel.
@@ -146,11 +198,28 @@ require_once './isloggedin2.php'
 
         </article>
         <div class="haut-page">
-            <a href="/" class="boutons bouton-lght">Haut de page</a>
+            <a href="#" class="boutons bouton-lght">Haut de page</a>
         </div>
 
     </section>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/footer.php'; ?>
-</body>
+    <footer>
+    <div class="footer">
+        <div>
+            <ul>
+                <p>
+                    58- <span>Rue du 19 Mars 1962</span>
+                    <br>
+                    62470, Béthune
+                </p>
+                <li>
+                    <button type="submit""><a href=" #"><img class="search" src="/image/facebook.png" alt="instagram-icon-logo-social"></a></button>
+                    <button type="submit""><a href=" #"><img class="search" src="/image/instagram.png" alt="instagram-icon-logo-social"></a></button>
+                    <button type="submit""><a href=" #"><img class="search" src="/image/youtube.png" alt="instagram-icon-logo-social"></a></button>
+                    <button type="submit""><a href=" #"><img class="search" src="/image/twitter.png" alt="instagram-icon-logo-social"></a></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer></body>
 
 </html>

@@ -4,7 +4,10 @@ require_once './isloggedin2.php';
 
 $user = isLoggedIn();
 
-
+echo "<pre>";
+var_dump($user);
+echo "</pre>";
+exit;
 
 ?>
 
@@ -13,18 +16,18 @@ $user = isLoggedIn();
 <html lang="en">
 
 <head>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/log/log-in.php' ?>
+    <?php require_once './public/include2/log/log-in.php' ?>
     <title>Japan Factory profile</title>
 </head>
 
 <body>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/log/header.php' ?>
+    <?php require_once './public/include2/log/header.php' ?>
 
     <h1>Utilisateur: </h1>
-    <h2><?= $user['nom' && 'prenom']; ?></h2>
+    <h2><?= $user['nom'] . $user['prenom']; ?></h2>
 
 
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/footer.php' ?>
+    <?php require_once './public/include2/footer.php' ?>
 
 </body>
 

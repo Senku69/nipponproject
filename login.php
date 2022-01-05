@@ -18,26 +18,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_input['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
+
+
     if (!$password || !$email) {
         $errors = "LES CHAMPS DOIVENT ETRE REMPLIS";
     } else {
-        $statementUser = $pdo->prepare('SELECT * FROM sessions WHERE email=:email');
+        $statementUser = $pdo->prepare('SELECT * FROM user WHERE email=:email');
         $statementUser->bindValue(':email', $email);
         $statementUser->execute();
         $user = $statementUser->fetch();
         // echo "<pre>";
         // var_dump($user);
         // echo "</pre>";
-        if ($user && password_verify($password, $user['password'])) {
-            $statementSession = $pdo->prepare('INSERT INTO sessions VALUES(DEFAULT, :userid)');
-            $statementSession->bindValue(':userid', $user['id']);
-            $statementSession->execute();
-            // $user = $statementSession->fetch();
-            $sessionId = $pdo->lastInsertId();
-            setcookie('session', $sessionId, time() + 60 * 5, '', '', false, true);
-            $errors = ERROR_REQUIRES;
+        // $hashPassword = password_hash($password, PASSWORD_ARGON2I);
+        // echo "hello $hashPassword <br>";
+        // echo "hello " . $user['password'];
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $statementSession = $pdo->prepare('INSERT INTO sessions VALUES(DEFAULT, :userid)');
+                $statementSession->bindValue(':userid', $user['id']);
+                $statementSession->execute();
+                // $user = $statementSession->fetch();
+                $sessionId = $pdo->lastInsertId();
+                setcookie('session', $sessionId, time() + 60 * 5, '', '', false, true);
+                echo "ok";
+            } else {
+                echo "ko2";
+                // header('location: /profile.php');
+            }
         } else {
-            header('location: /profile.php');
+            echo "ko";
+            // header('location: /profile.php');
         }
     }
 }
@@ -47,13 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 
 <head>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/log/log-in.php' ?>
+    <?php require_once './public/include2/log/log-in.php' ?>
     <title>Japan Factory inscription</title>
 </head>
 
 <body>
     <section>
-        <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/header.php' ?>
+        <?php require_once './public/include2/header.php' ?>
         <div class="container">
 
             <h1>LogIn</h1>
@@ -64,13 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input id="password" type="password" name="password"><br>
                 <button class="btn btn-dark btn-small">Envoyer</button>
                 <?php if ($errors) : ?>
-                        <h1 style="color: red"><?= $errors ?></h1>
-                    <?php endif; ?>
+                    <h1 style="color: red"><?= $errors ?></h1>
+                <?php endif; ?>
             </form>
 
         </div><br>
     </section>
-    <?php require_once '/Users/ledar/Desktop/projetNIPPON/public/include2/footer.php' ?>
+    <?php require_once './public/include2/footer.php' ?>
 </body>
 
 </html>
